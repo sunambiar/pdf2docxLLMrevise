@@ -1,0 +1,14 @@
+
+#pdfplumber==2.6.0
+#docx==0.0.9
+#language-tool-python==1.4.0
+#flask==2.0.1
+
+pdfplumber
+docx
+language-tool-python
+flask
+
+
+
+
