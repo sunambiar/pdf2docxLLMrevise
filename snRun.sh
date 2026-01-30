@@ -1,12 +1,12 @@
 
 docker build -t vivekachudamani .
 
-docker run -it --rm -v $(pwd):/app vivekachudamani
+docker run -it --rm -v "$(pwd)":/app vivekachudamani
 
 exit 
 
 docker run -it --rm \
-  -v $(pwd):/app \
+  -v "$(pwd)":/app \
   -p 5800:5800 \
   -e PDF_FOLDER=uploads \
   -e DOCX_FOLDER=docs \
@@ -28,5 +28,14 @@ This will process the provided PDF, preserve Sanskrit verses, correct grammar in
 
 
 pip install pdfplumber docx language-tool-python
+
+
+#--------------------------------
+
+docker compose up --build
+
+docker compose up --force-recreate
+
+docker compose up -d
 
 

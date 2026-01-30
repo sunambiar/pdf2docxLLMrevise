@@ -1,20 +1,38 @@
-version: '3.8'
+#version: '3.8'
 services:
+#   languagetool:
+#      command: docker run -d --name languagetool --restart unless-stopped -p 8081:8081 meyay/languagetool:latest    
+    grammar:
+#          build: ./services/grammar
+        build: ./LanguageTool-stable
+        image: dev/grammar:1
+        restart: always
+        container_name: dev.grammar
+        ports:
+            - "8130:8130" 
+    vivekachudamani:
+        build: .
+        command: python -m debugpy --listen 0.0.0.0:5678 app_Merge2PDFhtmlNew.py
+        ports:
+            - "5678:5678"
+#    ports:
+#      - "5678:5678"
 #  merge2pdf:
 #    command: python -m debugpy --listen 0.0.0.0:5678 app_Merge2PDFhtmlNew.py
 #    ports:
 #      - "5678:5678"
-web:
-build: .
-ports:
-- "8000:8000"
-volumes:
-- .:/app
-environment:
-- AZURE_CLIENT_ID
-- AZURE_TENANT_ID
-- AZURE_CLIENT_SECRET
+#  merge2pdf:
+#    command: python -m debugpy --listen 0.0.0.0:5678 app_Merge2PDFhtmlNew.py
+#    ports:
+#      - "5678:5678"
 
-
-
-
+#web:
+#build: .
+#ports:
+#  - "8000:8000"
+#volumes:
+#  - .:/app
+#environment:
+#  - AZURE_CLIENT_ID
+#  - AZURE_TENANT_ID
+#  - AZURE_CLIENT_SECRET

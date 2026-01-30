@@ -10,15 +10,15 @@
 '''
 #------------------------------------------------------------- SuN -- 2026-Jan-25 ---- }
 
-from flask import Flask, request, render_template_string, send_file, session, jsonify
+from flask import Flask, request, render_template_string, send_file, session, jsonify 
 import os, uuid
 import pandas as pd
 from docx import Document
-from docxcompose.composer import Composer
-from docx2pdf import convert
+#from docxcompose.composer import Composer
+#from docx2pdf import convert
 
 from config import config
-import viveka_grammar_correction
+#import viveka_grammar_correction
 from viveka_grammar_correction import vivekachudamani_correct
 #from merge2pdf import mail_merge_to_pdf
 
