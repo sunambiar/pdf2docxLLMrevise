@@ -5,7 +5,7 @@ from language_tool_python import LanguageTool
 import re
 
 # Initialize the grammar correction tool with English rules
-grammar_tool = LanguageTool('en')
+grammar_tool = LanguageTool('en-US')
 
 #import pdfplumber
 #from docx import Document
@@ -59,12 +59,11 @@ def correct_non_sanskrit_paragraphs(paragraphs):
     return corrected
 
 #def save_to_word(doc, paragraphs, word_path):
-def save_to_word(doc, paragraphs):    """Save the paragraphs to a Word document"""
+def save_to_word(doc, paragraphs):    
+    """Save the paragraphs to a Word document"""
     #doc = Document()
-
-    for paragraph in paragraphs:
+    for paragraph in paragraphs: 
         p = doc.add_paragraph(paragraph)
-
         # Optionally add spacing between paragraphs (if desired)
         if p and doc.paragraphs:
             last_paragraph = doc.paragraphs[-1]

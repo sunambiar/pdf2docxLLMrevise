@@ -4,11 +4,16 @@
 #language-tool-python==1.4.0
 #flask==2.0.1
 
+flask
 pdfplumber
 docx
 language-tool-python
-flask
+pandas
+python-docx 
 
-
+#docxtpl 
+#docx2pdf     
+#docxcompose
+#pypandoc
 
 
